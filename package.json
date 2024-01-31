@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "npx ts-node main.ts"
+  },
   "devDependencies": {
     "@types/play-sound": "^1.1.2",
     "bitcoin-core": "^4.1.0",
