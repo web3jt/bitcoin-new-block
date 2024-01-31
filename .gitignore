@@ -1,3 +1,14 @@
+# config
+_config.yaml
+
+# yarn
+yarn.lock
+
+# system & tools
+.DS_Store
+.idea
+.vscode
+
 # Logs
 logs
 *.log
