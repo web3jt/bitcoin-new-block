@@ -1,4 +1,5 @@
 import path from 'path';
+import moment from 'moment';
 import player from "play-sound";
 import config from './utils/config';
 
@@ -26,15 +27,17 @@ async function main() {
     try {
       const currentBlock = await client.getBlockCount();
       if (currentBlock > lastBlock) {
-        console.log('New block:', currentBlock);
+        const now = moment().format('YYYY-MM-DD HH:mm:ss');
+        console.log(now, currentBlock);
         play.play(mp3File);
         lastBlock = currentBlock;
       }
     } catch (error: any) {
-      console.error(error.message);
+      const now = moment().format('YYYY-MM-DD HH:mm:ss');
+      console.error(now, error.message);
     }
 
-    sleep(1000);
+    sleep(500);
   }
 }
 
