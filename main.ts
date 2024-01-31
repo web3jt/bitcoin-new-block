@@ -30,7 +30,7 @@ async function main() {
         play.play(mp3File);
         lastBlock = currentBlock;
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error(error.message);
     }
 
