@@ -23,13 +23,15 @@ async function main() {
   let lastBlock: number = 0;
 
   while (true) {
-    const currentBlock = await client.getBlockCount();
-    if (currentBlock > lastBlock) {
-      console.log('New block:', currentBlock);
-
-      play.play(mp3File);
-
-      lastBlock = currentBlock;
+    try {
+      const currentBlock = await client.getBlockCount();
+      if (currentBlock > lastBlock) {
+        console.log('New block:', currentBlock);
+        play.play(mp3File);
+        lastBlock = currentBlock;
+      }
+    } catch (error) {
+      console.error(error.message);
     }
 
     sleep(1000);
